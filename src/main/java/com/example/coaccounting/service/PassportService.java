@@ -15,15 +15,8 @@ public class PassportService {
         this.passportRepository = passportRepository;
     }
 
-    public Passport findById(Integer id) {
-        return passportRepository.getOne(id);
-    }
-
     public void deleteById(Integer id) {
         passportRepository.deleteById(id);
     }
 
-    public Passport savePassport(Passport passport) {
-        return passportRepository.save(passport);
-    }
 }

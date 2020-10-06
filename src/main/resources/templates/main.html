@@ -35,7 +35,7 @@
                         <td th:text="${coWorker.phone}">Phone</td>
                         <td th:text="${coWorker.address}">Address</td>
                         <td th:text="${coWorker.passport.number}">Number</td>
-                        <td th:text="${coWorker.passport.dateBirth}">Date of Birth</td>
+                        <td th:text="${coWorker.passport.dateOfBirth}">Date of Birth</td>
                         <td>
                             <a th:href="@{updateCoWorker/{id}(id=${coWorker.id})}">Edit</a>
                             <a th:href="@{deleteCoWorker/{id}(id=${coWorker.id})}">Delete</a>

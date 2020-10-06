@@ -50,15 +50,13 @@ public class MainController {
     @GetMapping("/updateCoWorker/{id}")
     public String updateCoWorkerForm(@PathVariable("id") Integer id, Model model){
         CoWorker coWorker = coWorkerService.findById(id);
-        Integer passportId = coWorker.getPassport().getId();
-        passportService.deleteById(passportId);
-
         model.addAttribute("coWorker", coWorker);
+        coWorkerService.deleteById(id);
         return "/updateCoWorker";
     }
 
     @PostMapping("/updateCoWorker")
-    public String updateCoWorker(CoWorker coWorker, Passport passport) {
+    public String updateCoWorker(CoWorker coWorker) {
         coWorkerService.saveCoWorker(coWorker);
         return "redirect:/main";
     }

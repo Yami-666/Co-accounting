@@ -1,7 +1,5 @@
 package com.example.coaccounting.service;
 
-import com.example.coaccounting.model.CoWorker;
-import com.example.coaccounting.model.Passport;
 import com.example.coaccounting.repository.PassportRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,9 +12,4 @@ public class PassportService {
     public PassportService(PassportRepository passportRepository) {
         this.passportRepository = passportRepository;
     }
-
-    public void deleteById(Integer id) {
-        passportRepository.deleteById(id);
-    }
-
 }

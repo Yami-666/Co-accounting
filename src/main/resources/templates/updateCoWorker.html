@@ -2,43 +2,43 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title><!DOCTYPE html>
-        <html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
-        <head>
-            <meta charset="UTF-8">
-            <title>Create co-worker</title>
-        </head>
+
+    <title>Create co-worker</title>
+    <link rel="stylesheet" href="/static/css/style.css"/>
 <body>
 
 <form action="#" th:action="@{/updateCoWorker}" method="post">
-        <label for="id">ID CoWorker</label>
-        <input readonly type="number" th:field="${coWorker.id}" id="id" placeholder="ID">
-    <br/>
-        <label for="fio">FIO</label>
-        <input type="text" th:field="${coWorker.passport.fio}" id="fio" placeholder="fio">
-    <br/>
-        <label for="addressPassport">address Passport</label>
-        <input type="text" th:field="${coWorker.passport.addressPassport}" id="addressPassport" placeholder="address passport">
-    <br/>
-        <label for="number">number</label>
-        <input type="text" th:field="${coWorker.passport.number}" id="number" placeholder="number">
-    <br/>
-        <label for="dateBirth">dateBirth</label>
-        <input type="date" th:field="${coWorker.passport.dateBirth}" id="dateBirth" placeholder="dateBirth">
-    <br/>
-    <br/>
-        <label for="address">Address</label>
-        <input type="text" th:field="${coWorker.address}" id="address" placeholder="Address">
-    <br/>
-        <label for="urlPhoto">url photo</label>
-        <input type="text" th:field="${coWorker.urlPhoto}" id="urlPhoto" placeholder="urlPhoto">
-    <br/>
-        <label for="phone">Phone</label>
-        <input type="text" th:field="${coWorker.phone}" id="phone" placeholder="Phone">
+    <div class="field">
+        <label for="fio">ФИО</label>
+        <input type="text" th:field="*{coWorker.passport.fio}" id="fio" placeholder="ФИО">
+    </div>
+    <div class="field">
+        <label for="addressPassport">Место рождения</label>
+        <input type="text" th:field="*{coWorker.passport.addressPassport}" id="addressPassport" placeholder="Место рождения">
+    </div>
+    <div class="field">
+        <label for="number">Серия и номер</label>
+        <input type="text" th:field="*{coWorker.passport.number}" id="number" placeholder="Серия и номер">
+    </div>
+    <div class="field">
+        <label for="dateOfBirth">Дата рождения</label>
+        <input type="date" th:field="*{coWorker.passport.dateOfBirth}" id="dateOfBirth" placeholder="Дата рождения">
+    </div>
+    <div class="field">
+        <label for="address">Адрес прописки</label>
+        <input type="text" th:field="*{coWorker.address}" id="address" placeholder="Адрес прописки">
+    </div>
+    <div class="field">
+        <label for="urlPhoto">Фото</label>
+        <input type="file" id="urlPhoto" th:field="*{coWorker.urlPhoto}" name="photo" multiple accept="image/*,image/jpeg">
+    </div>
+    <div class="field">
+        <label for="phone">Телефон</label>
+        <input type="text" th:field="*{coWorker.phone}" id="phone" placeholder="Телефон">
+    </div>
     <br/>
 
-
-    <input type="submit" value="Update Co-worker">
+    <input type="submit" value="Обновить">
 </form>
 
 </body>

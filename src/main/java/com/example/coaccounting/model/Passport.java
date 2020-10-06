@@ -12,12 +12,12 @@ public class Passport {
     public Passport() {
     }
 
-    public Passport(Integer id, String number, String fio, String addressPassport, Date dateBirth, CoWorker coWorker) {
+    public Passport(Integer id, String number, String fio, String addressPassport, Date dateOfBirth, CoWorker coWorker) {
         this.id = id;
         this.number = number;
         this.fio = fio;
         this.addressPassport = addressPassport;
-        this.dateBirth = dateBirth;
+        this.dateOfBirth = dateOfBirth;
         this.coWorker = coWorker;
     }
 
@@ -35,8 +35,8 @@ public class Passport {
     private String addressPassport;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @Column(name = "dateBirth")
-    private Date dateBirth;
+    @Column(name = "dateOfBirth")
+    private Date dateOfBirth;
 
     @OneToOne(mappedBy = "passport", cascade = CascadeType.ALL)
     private CoWorker coWorker;
@@ -58,12 +58,12 @@ public class Passport {
         this.number = number;
     }
 
-    public Date getDateBirth() {
-        return dateBirth;
+    public Date getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setDateBirth(Date dateBirth) {
-        this.dateBirth = dateBirth;
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 
     public String getFio() {

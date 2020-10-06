@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Co-worker List</title>
+</head>
+<body style="font-size: 18px">
+    <div th:switch="${coWorkers}">
+        <h2 th:case="null" align="center">No co-workers not found!</h2>
+        <div th:case="*">
+
+            <div align="center">
+                <h1>Company "The progress"</h1>
+                <h2>Co-worker List</h2>
+                <p><a href="/createCoWorker">Create Co-Worker</a></p>
+                <br/><br/>
+                <table border="1" cellpadding="10">
+                    <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Photo</th>
+                        <th>FIO</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Passport</th>
+                        <th>Date</th>
+                        <th>*</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="coWorker : ${coWorkers}">
+                        <td th:text="${coWorker.id}">id</td>
+                        <td th:text="${coWorker.urlPhoto}">Photo</td>
+                        <td th:text="${coWorker.passport.fio}">FIO</td>
+                        <td th:text="${coWorker.phone}">Phone</td>
+                        <td th:text="${coWorker.address}">Address</td>
+                        <td th:text="${coWorker.passport.number}">Number</td>
+                        <td th:text="${coWorker.passport.dateBirth}">Date of Birth</td>
+                        <td>
+                            <a th:href="@{updateCoWorker/{id}(id=${coWorker.id})}">Edit</a>
+                            <a th:href="@{deleteCoWorker/{id}(id=${coWorker.id})}">Delete</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

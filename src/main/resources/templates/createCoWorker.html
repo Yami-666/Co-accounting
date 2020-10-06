@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create co-worker</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/createCoWorker}" method="post">
+        <label for="fio">FIO</label>
+        <input type="text" th:field="${coWorker.passport.fio}" id="fio" placeholder="fio">
+    <br/>
+        <label for="addressPassport">address Passport</label>
+        <input type="text" th:field="${coWorker.passport.addressPassport}" id="addressPassport" placeholder="address passport">
+    <br/>
+        <label for="number">number</label>
+        <input type="text" th:field="${coWorker.passport.number}" id="number" placeholder="number">
+    <br/>
+        <label for="dateBirth">dateBirth</label>
+        <input type="date" th:field="${coWorker.passport.dateBirth}" id="dateBirth" placeholder="dateBirth">
+    <br/>
+    <br/>
+        <label for="address">Address</label>
+        <input type="text" th:field="${coWorker.address}" id="address" placeholder="Address">
+    <br/>
+        <label for="urlPhoto">url photo</label>
+        <input type="text" th:field="${coWorker.urlPhoto}" id="urlPhoto" placeholder="urlPhoto">
+    <br/>
+        <label for="phone">Phone</label>
+        <input type="text" th:field="${coWorker.phone}" id="phone" placeholder="Phone">
+    <br/>
+
+
+    <input type="submit" value="Create Co-worker">
+</form>
+
+</body>
+</html>
